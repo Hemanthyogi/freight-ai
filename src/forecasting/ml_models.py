@@ -21,9 +21,17 @@ from typing import Any
 
 import numpy as np
 import pandas as pd
-from lightgbm import LGBMRegressor
-from sklearn.ensemble import RandomForestRegressor
-from xgboost import XGBRegressor
+from sklearn.ensemble import RandomForestRegressor, HistGradientBoostingRegressor
+
+try:
+    from lightgbm import LGBMRegressor
+except ImportError:
+    LGBMRegressor = None
+
+try:
+    from xgboost import XGBRegressor
+except ImportError:
+    XGBRegressor = None
 
 from src.utils.constants import FORECAST_HORIZONS
 from src.utils.logger import logger
@@ -34,7 +42,7 @@ class MultiHorizonForecaster:
     Base wrapper training independent regressor models for each forecast horizon.
     """
 
-    def __init__(self, model_type: str = "xgboost", params: dict[str, Any] | None = None) -> None:
+    def __init__(self, model_type: str = "random_forest", params: dict[str, Any] | None = None) -> None:
         self.model_type = model_type.lower()
         self.params = params or {}
         self.models: dict[int, Any] = {}
@@ -44,6 +52,9 @@ class MultiHorizonForecaster:
 
     def _create_regressor(self) -> Any:
         if self.model_type == "xgboost":
+            if XGBRegressor is None:
+                logger.warning("XGBoost not installed; falling back to HistGradientBoostingRegressor.")
+                return HistGradientBoostingRegressor(max_iter=150, learning_rate=0.05, max_depth=5, random_state=42)
             default_params = {
                 "n_estimators": 150,
                 "learning_rate": 0.05,
@@ -56,6 +67,9 @@ class MultiHorizonForecaster:
             default_params.update(self.params)
             return XGBRegressor(**default_params)
         elif self.model_type == "lightgbm":
+            if LGBMRegressor is None:
+                logger.warning("LightGBM not installed; falling back to HistGradientBoostingRegressor.")
+                return HistGradientBoostingRegressor(max_iter=150, learning_rate=0.05, max_depth=5, random_state=42)
             default_params = {
                 "n_estimators": 150,
                 "learning_rate": 0.05,
