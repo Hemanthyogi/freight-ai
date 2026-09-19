@@ -1,0 +1,1 @@
+"""FreightMind AI tests package."""

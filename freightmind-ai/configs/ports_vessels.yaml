@@ -1,0 +1,362 @@
+# ============================================================
+# FreightMind AI — Port & Vessel Master Configuration
+# SIH 2026 | Problem Statement 26006
+#
+# DATA QUALITY LEGEND:
+#   verified   → Sourced from official port authority / IPA publications
+#   estimated  → Derived from public/secondary sources (approximate)
+#   unavailable → Not found in public sources — to be filled from real data
+#
+# ⚠️  Do NOT present estimated/unavailable values as official specs.
+# ============================================================
+
+ports:
+  - id: "paradip"
+    name: "Paradip Port"
+    country: "India"
+    state: "Odisha"
+    region: "east_coast_india"
+    latitude: 20.3194
+    longitude: 86.6089
+    max_draft_m: 17.0
+    max_loa_m: 300.0
+    max_beam_m: 45.0
+    cargo_handling_rate_mt_day: 25000
+    turnaround_time_hrs: 72
+    berths_total: 19
+    bulk_berths: 12
+    congestion_baseline: "medium"    # historical average
+    primary_cargo: ["coal", "iron_ore", "fertilizer", "thermal_coal"]
+    data_quality:
+      max_draft: "verified"
+      max_loa: "estimated"
+      max_beam: "estimated"
+      cargo_handling_rate: "estimated"
+      turnaround_time: "estimated"
+    notes: "One of the largest ports on East Coast; coal major cargo"
+
+  - id: "visakhapatnam"
+    name: "Visakhapatnam Port (Vizag)"
+    country: "India"
+    state: "Andhra Pradesh"
+    region: "east_coast_india"
+    latitude: 17.6868
+    longitude: 83.2185
+    max_draft_m: 14.0
+    max_loa_m: 300.0
+    max_beam_m: 45.0
+    cargo_handling_rate_mt_day: 30000
+    turnaround_time_hrs: 60
+    berths_total: 26
+    bulk_berths: 10
+    congestion_baseline: "medium"
+    primary_cargo: ["iron_ore", "coal", "fertilizer", "steel"]
+    data_quality:
+      max_draft: "verified"
+      max_loa: "estimated"
+      max_beam: "estimated"
+      cargo_handling_rate: "estimated"
+      turnaround_time: "estimated"
+    notes: "Major multipurpose port; iron ore export + coal import"
+
+  - id: "gangavaram"
+    name: "Gangavaram Port"
+    country: "India"
+    state: "Andhra Pradesh"
+    region: "east_coast_india"
+    latitude: 17.6200
+    longitude: 83.2300
+    max_draft_m: 18.0
+    max_loa_m: 300.0
+    max_beam_m: 47.0
+    cargo_handling_rate_mt_day: 35000
+    turnaround_time_hrs: 48
+    berths_total: 11
+    bulk_berths: 8
+    congestion_baseline: "low"
+    primary_cargo: ["coal", "iron_ore", "bulk_cargo"]
+    data_quality:
+      max_draft: "verified"
+      max_loa: "estimated"
+      max_beam: "estimated"
+      cargo_handling_rate: "estimated"
+      turnaround_time: "estimated"
+    notes: "Deep draft port; can handle Capesize vessels"
+
+  - id: "gopalpur"
+    name: "Gopalpur Port"
+    country: "India"
+    state: "Odisha"
+    region: "east_coast_india"
+    latitude: 19.2603
+    longitude: 84.8834
+    max_draft_m: 12.5
+    max_loa_m: 200.0
+    max_beam_m: 32.0
+    cargo_handling_rate_mt_day: 15000
+    turnaround_time_hrs: 96
+    berths_total: 3
+    bulk_berths: 2
+    congestion_baseline: "low"
+    primary_cargo: ["coal", "chrome_ore", "general_cargo"]
+    data_quality:
+      max_draft: "estimated"
+      max_loa: "estimated"
+      max_beam: "estimated"
+      cargo_handling_rate: "estimated"
+      turnaround_time: "estimated"
+    notes: "Smaller port; limited to Handysize/Supramax"
+
+  - id: "dhamra"
+    name: "Dhamra Port"
+    country: "India"
+    state: "Odisha"
+    region: "east_coast_india"
+    latitude: 20.7667
+    longitude: 86.8700
+    max_draft_m: 17.0
+    max_loa_m: 280.0
+    max_beam_m: 43.0
+    cargo_handling_rate_mt_day: 28000
+    turnaround_time_hrs: 60
+    berths_total: 8
+    bulk_berths: 6
+    congestion_baseline: "low"
+    primary_cargo: ["coal", "iron_ore", "limestone"]
+    data_quality:
+      max_draft: "verified"
+      max_loa: "estimated"
+      max_beam: "estimated"
+      cargo_handling_rate: "estimated"
+      turnaround_time: "estimated"
+    notes: "Modern deep water port; good for large bulk carriers"
+
+  - id: "sagar_sandheads"
+    name: "Sagar Island / Sandheads Anchorage"
+    country: "India"
+    state: "West Bengal"
+    region: "east_coast_india"
+    latitude: 21.6800
+    longitude: 88.0800
+    max_draft_m: 8.0
+    max_loa_m: 180.0
+    max_beam_m: 28.0
+    cargo_handling_rate_mt_day: 10000
+    turnaround_time_hrs: 120
+    berths_total: null
+    bulk_berths: null
+    congestion_baseline: "high"
+    primary_cargo: ["general_cargo", "transshipment"]
+    data_quality:
+      max_draft: "estimated"
+      max_loa: "estimated"
+      max_beam: "estimated"
+      cargo_handling_rate: "unavailable"
+      turnaround_time: "estimated"
+    notes: "Shallow anchorage; acts as lightering area for Haldia. Very limited direct bulk operations."
+
+  - id: "haldia"
+    name: "Haldia Dock Complex"
+    country: "India"
+    state: "West Bengal"
+    region: "east_coast_india"
+    latitude: 22.0315
+    longitude: 88.0736
+    max_draft_m: 9.5
+    max_loa_m: 200.0
+    max_beam_m: 32.0
+    cargo_handling_rate_mt_day: 20000
+    turnaround_time_hrs: 90
+    berths_total: 18
+    bulk_berths: 7
+    congestion_baseline: "high"
+    primary_cargo: ["coal", "fertilizer", "general_cargo", "petroleum"]
+    data_quality:
+      max_draft: "verified"
+      max_loa: "estimated"
+      max_beam: "estimated"
+      cargo_handling_rate: "estimated"
+      turnaround_time: "estimated"
+    notes: "Draft-constrained; high congestion; Panamax/Capesize not feasible"
+
+# ============================================================
+# OVERSEAS ORIGIN PORTS (for route feasibility)
+# ============================================================
+origin_ports:
+  - id: "newcastle_au"
+    name: "Port of Newcastle"
+    country: "Australia"
+    latitude: -32.9283
+    longitude: 151.7817
+    max_draft_m: 15.5
+    primary_cargo: ["coal"]
+    notes: "World's largest coal export port"
+
+  - id: "hay_point_au"
+    name: "Hay Point Coal Terminal"
+    country: "Australia"
+    latitude: -21.2775
+    longitude: 149.3022
+    max_draft_m: 16.5
+    primary_cargo: ["coal"]
+    notes: "Major Queensland coal terminal"
+
+  - id: "port_hedland_au"
+    name: "Port Hedland"
+    country: "Australia"
+    latitude: -20.3108
+    longitude: 118.5658
+    max_draft_m: 18.0
+    primary_cargo: ["iron_ore"]
+    notes: "World's largest bulk export port by tonnage"
+
+  - id: "dampier_au"
+    name: "Dampier Port"
+    country: "Australia"
+    latitude: -20.6614
+    longitude: 116.7167
+    max_draft_m: 17.0
+    primary_cargo: ["iron_ore", "salt"]
+
+  - id: "south_africa_rbct"
+    name: "Richards Bay Coal Terminal"
+    country: "South Africa"
+    latitude: -28.7757
+    longitude: 32.1178
+    max_draft_m: 17.5
+    primary_cargo: ["coal"]
+
+  - id: "indonesia_balikpapan"
+    name: "Balikpapan"
+    country: "Indonesia"
+    latitude: -1.2654
+    longitude: 116.8312
+    max_draft_m: 14.0
+    primary_cargo: ["coal"]
+    notes: "Major Indonesian thermal coal origin"
+
+# ============================================================
+# VESSEL MASTER DATA
+# Specifications are representative class averages.
+# Individual vessels will vary.
+# ============================================================
+vessels:
+  - type: "Handysize"
+    dwt_mt: 28000
+    cargo_capacity_mt: 26500      # ~95% DWT usable
+    draft_laden_m: 9.8
+    draft_ballast_m: 5.5
+    loa_m: 180.0
+    beam_m: 28.0
+    speed_laden_kn: 13.5
+    speed_ballast_kn: 14.5
+    fuel_consumption_mt_day: 22.0
+    port_cost_usd_call: 35000
+    hire_rate_usd_day_ref: 12000   # reference; market-driven
+    suitable_cargo: ["coal", "grain", "fertilizer", "steel", "general_bulk"]
+    notes: "Most flexible; fits most ports"
+
+  - type: "Supramax"
+    dwt_mt: 58000
+    cargo_capacity_mt: 55100
+    draft_laden_m: 12.5
+    draft_ballast_m: 6.8
+    loa_m: 200.0
+    beam_m: 32.0
+    speed_laden_kn: 14.0
+    speed_ballast_kn: 15.0
+    fuel_consumption_mt_day: 28.0
+    port_cost_usd_call: 45000
+    hire_rate_usd_day_ref: 18000
+    suitable_cargo: ["coal", "iron_ore", "grain", "fertilizer"]
+    notes: "Workhorse of bulk trade; good East Coast India compatibility"
+
+  - type: "Panamax"
+    dwt_mt: 75000
+    cargo_capacity_mt: 71250
+    draft_laden_m: 14.0
+    draft_ballast_m: 7.5
+    loa_m: 225.0
+    beam_m: 32.3
+    speed_laden_kn: 14.5
+    speed_ballast_kn: 15.5
+    fuel_consumption_mt_day: 32.0
+    port_cost_usd_call: 55000
+    hire_rate_usd_day_ref: 22000
+    suitable_cargo: ["coal", "iron_ore", "grain"]
+    notes: "Cannot use Haldia/Gopalpur/Sagar due to draft/beam constraints"
+
+  - type: "Capesize"
+    dwt_mt: 180000
+    cargo_capacity_mt: 171000
+    draft_laden_m: 18.0
+    draft_ballast_m: 9.5
+    loa_m: 290.0
+    beam_m: 45.0
+    speed_laden_kn: 14.5
+    speed_ballast_kn: 15.5
+    fuel_consumption_mt_day: 55.0
+    port_cost_usd_call: 90000
+    hire_rate_usd_day_ref: 35000
+    suitable_cargo: ["iron_ore", "coal"]
+    notes: "Limited to deep draft ports: Gangavaram, Dhamra, Paradip only"
+
+# ============================================================
+# TRADE ROUTES (origin → destination pairs)
+# ============================================================
+routes:
+  - id: "AU_COAL_PARADIP"
+    name: "Australia (Newcastle/Hay Point) → Paradip"
+    origin_region: "Australia"
+    destination: "paradip"
+    cargo: "coal"
+    distance_nm: 4800
+    typical_voyage_days: 18
+    primary_vessel_types: ["Panamax", "Capesize", "Supramax"]
+
+  - id: "AU_COAL_VIZAG"
+    name: "Australia → Visakhapatnam"
+    origin_region: "Australia"
+    destination: "visakhapatnam"
+    cargo: "coal"
+    distance_nm: 4700
+    typical_voyage_days: 17
+    primary_vessel_types: ["Panamax", "Supramax"]
+
+  - id: "AU_ORE_GANGAVARAM"
+    name: "Australia (Port Hedland) → Gangavaram"
+    origin_region: "Australia"
+    destination: "gangavaram"
+    cargo: "iron_ore"
+    distance_nm: 4500
+    typical_voyage_days: 16
+    primary_vessel_types: ["Capesize", "Panamax"]
+
+  - id: "ID_COAL_PARADIP"
+    name: "Indonesia (Balikpapan) → Paradip"
+    origin_region: "Indonesia"
+    destination: "paradip"
+    cargo: "coal"
+    distance_nm: 2800
+    typical_voyage_days: 11
+    primary_vessel_types: ["Supramax", "Panamax", "Handysize"]
+
+  - id: "ZA_COAL_VIZAG"
+    name: "South Africa (Richards Bay) → Vizag"
+    origin_region: "South Africa"
+    destination: "visakhapatnam"
+    cargo: "coal"
+    distance_nm: 4200
+    typical_voyage_days: 16
+    primary_vessel_types: ["Panamax", "Supramax"]
+
+# ============================================================
+# BUNKER FUEL REFERENCE PRICES (USD/MT) — Demo baseline
+# Source: approximate market reference; update with live data
+# ============================================================
+fuel_reference:
+  VLSFO_base_usd_mt: 580       # Very Low Sulphur Fuel Oil
+  MGO_base_usd_mt: 750         # Marine Gas Oil
+  reference_date: "2026-09-01"
+  data_quality: "estimated"
+  notes: "Demo baseline only. Use Ship&Bunker API for real data."

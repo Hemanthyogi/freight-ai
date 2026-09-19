@@ -1,0 +1,21 @@
+vessel_id,vessel_name,imo_number,vessel_type,dwt_mt,cargo_capacity_mt,draft_laden_m,draft_ballast_m,loa_m,beam_m,speed_laden_kn,speed_ballast_kn,fuel_consumption_mt_day,port_cost_usd_call,hire_rate_usd_day_ref,build_year,flag,availability_status,availability_date,data_source,is_synthetic
+V0001,MV Pacific Wind,IMO9000001,Handysize,27178,26500,9.8,5.5,180.0,28.0,13.9,14.5,22.4,35000,12000,2020,Marshall Islands,available,2026-09-26,DEMO_DATA,True
+V0002,MV Eastern Dawn,IMO9000002,Handysize,28951,26500,9.9,5.5,180.0,28.0,13.8,14.5,21.3,35000,12000,2020,Liberia,available,2026-09-22,DEMO_DATA,True
+V0003,MV Ocean Breeze,IMO9000003,Handysize,27365,26500,9.9,5.5,180.0,28.0,13.8,14.5,21.9,35000,12000,2022,Liberia,available,2026-09-16,DEMO_DATA,True
+V0004,MV Coastal Star,IMO9000004,Handysize,28109,26500,9.6,5.5,180.0,28.0,13.8,14.5,22.3,35000,12000,2012,Hong Kong,chartered,2026-09-22,DEMO_DATA,True
+V0005,MV Harbour Light,IMO9000005,Handysize,27135,26500,10.0,5.5,180.0,28.0,13.8,14.5,21.4,35000,12000,2022,Marshall Islands,available,2026-09-25,DEMO_DATA,True
+V0006,MV Ocean Crest,IMO9000006,Supramax,57087,55100,12.4,6.8,200.0,32.0,14.2,15.0,28.5,45000,18000,2014,Singapore,available,2026-09-21,DEMO_DATA,True
+V0007,MV Eastern Star,IMO9000007,Supramax,58811,55100,12.5,6.8,200.0,32.0,13.7,15.0,27.3,45000,18000,2014,Hong Kong,available,2026-09-21,DEMO_DATA,True
+V0008,MV Pacific Trader,IMO9000008,Supramax,57453,55100,12.6,6.8,200.0,32.0,13.9,15.0,28.7,45000,18000,2018,Hong Kong,available,2026-09-21,DEMO_DATA,True
+V0009,MV Indian Crown,IMO9000009,Supramax,58535,55100,12.6,6.8,200.0,32.0,13.9,15.0,27.6,45000,18000,2020,Marshall Islands,chartered,2026-09-28,DEMO_DATA,True
+V0010,MV Bulk Leader,IMO9000010,Supramax,57279,55100,12.4,6.8,200.0,32.0,13.5,15.0,28.6,45000,18000,2020,Hong Kong,available,2026-09-29,DEMO_DATA,True
+V0011,MV Horizon Pioneer,IMO9000011,Panamax,74554,71250,14.0,7.5,225.0,32.3,14.6,15.5,31.3,55000,22000,2020,Marshall Islands,available,2026-09-24,DEMO_DATA,True
+V0012,MV Pacific Voyager,IMO9000012,Panamax,75336,71250,14.0,7.5,225.0,32.3,14.6,15.5,32.5,55000,22000,2017,Hong Kong,available,2026-09-26,DEMO_DATA,True
+V0013,MV Asia Bridge,IMO9000013,Panamax,74181,71250,13.9,7.5,225.0,32.3,14.0,15.5,31.9,55000,22000,2017,Singapore,available,2026-09-20,DEMO_DATA,True
+V0014,MV Ocean Titan,IMO9000014,Panamax,74817,71250,14.1,7.5,225.0,32.3,14.2,15.5,31.1,55000,22000,2021,Marshall Islands,in_port,2026-09-21,DEMO_DATA,True
+V0015,MV Route Master,IMO9000015,Panamax,74868,71250,14.0,7.5,225.0,32.3,14.8,15.5,32.3,55000,22000,2018,Liberia,available,2026-09-23,DEMO_DATA,True
+V0016,MV Iron Giant,IMO9000016,Capesize,180628,171000,17.9,9.5,290.0,45.0,14.0,15.5,54.2,90000,35000,2020,Hong Kong,chartered,2026-09-24,DEMO_DATA,True
+V0017,MV Pacific Colossus,IMO9000017,Capesize,180434,171000,18.0,9.5,290.0,45.0,14.2,15.5,55.4,90000,35000,2012,Liberia,available,2026-09-18,DEMO_DATA,True
+V0018,MV Ocean Monarch,IMO9000018,Capesize,179762,171000,17.9,9.5,290.0,45.0,14.6,15.5,54.7,90000,35000,2022,Panama,available,2026-09-17,DEMO_DATA,True
+V0019,MV Bulk Empire,IMO9000019,Capesize,179677,171000,18.2,9.5,290.0,45.0,14.7,15.5,54.5,90000,35000,2022,Hong Kong,in_port,2026-09-20,DEMO_DATA,True
+V0020,MV Trade Horizon,IMO9000020,Capesize,180557,171000,18.1,9.5,290.0,45.0,14.4,15.5,54.5,90000,35000,2011,Panama,available,2026-10-03,DEMO_DATA,True

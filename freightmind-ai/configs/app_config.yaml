@@ -1,0 +1,66 @@
+app:
+  name: "FreightMind AI"
+  version: "0.1.0"
+  description: "Intelligent Freight Forecasting & Vessel Charter Optimization"
+  sih_ps_id: "26006"
+  demo_mode: true
+
+api:
+  host: "0.0.0.0"
+  port: 8000
+  reload: true
+  workers: 1
+
+database:
+  url: "sqlite+aiosqlite:///./freightmind.db"
+  echo: false
+
+forecasting:
+  default_horizons_days: [7, 14, 30, 60, 90]
+  confidence_level: 0.80            # 80% prediction interval
+  min_training_rows: 365            # Minimum rows before ML model is used
+  fallback_model: "moving_average"  # if insufficient data
+
+feature_engineering:
+  lag_days: [1, 7, 14, 30]
+  rolling_windows: [7, 14, 30]
+  rolling_stats: ["mean", "std", "min", "max"]
+
+models:
+  directory: "./models"
+  freight_forecast:
+    primary: "xgboost"
+    candidates: ["naive", "moving_average", "sarima", "xgboost", "lightgbm"]
+  risk_model:
+    primary: "xgboost"
+
+risk:
+  thresholds:
+    low: 33
+    medium: 66
+    # above 66 = high
+  weights:
+    freight_risk: 0.30
+    congestion_risk: 0.30
+    vessel_availability_risk: 0.20
+    operational_risk: 0.20
+
+cost_model:
+  bunker:
+    fuel_type: "VLSFO"
+    price_usd_mt: 580             # Updated from ports_vessels.yaml
+  port_cost_factor: 1.0           # Multiplier for port cost estimates
+  demurrage_rate_usd_day: 15000   # Reference demurrage rate
+  waiting_cost_factor: 0.5        # Fraction of hire rate charged for waiting
+
+contract_strategy:
+  spot_premium_pct: 0.05          # Spot contracts typically 5% premium vs FFA
+  multi_voyage_discount_pct: 0.03 # Multi-voyage discount estimate
+  contract_durations:
+    short_term_months: 3
+    medium_term_months: 6
+
+logging:
+  level: "INFO"
+  format: "json"
+  file: "./logs/freightmind.log"

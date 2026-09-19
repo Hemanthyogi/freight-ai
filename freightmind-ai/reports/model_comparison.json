@@ -1,0 +1,50 @@
+[
+  {
+    "Model":"Naive (Persistence)",
+    "MAE":0.949,
+    "RMSE":1.277,
+    "MAPE":6.95,
+    "R2":0.8142,
+    "Training_Time_s":0.0
+  },
+  {
+    "Model":"XGBoost Regressor (Primary)",
+    "MAE":0.953,
+    "RMSE":1.259,
+    "MAPE":7.05,
+    "R2":0.8192,
+    "Training_Time_s":16.387
+  },
+  {
+    "Model":"LightGBM Regressor",
+    "MAE":0.967,
+    "RMSE":1.281,
+    "MAPE":7.15,
+    "R2":0.8127,
+    "Training_Time_s":2.751
+  },
+  {
+    "Model":"Moving Average (7-Day)",
+    "MAE":0.999,
+    "RMSE":1.323,
+    "MAPE":7.34,
+    "R2":0.8004,
+    "Training_Time_s":0.0
+  },
+  {
+    "Model":"Random Forest Regressor",
+    "MAE":1.006,
+    "RMSE":1.321,
+    "MAPE":7.44,
+    "R2":0.801,
+    "Training_Time_s":14.075
+  },
+  {
+    "Model":"Moving Average (14-Day)",
+    "MAE":1.039,
+    "RMSE":1.36,
+    "MAPE":7.66,
+    "R2":0.789,
+    "Training_Time_s":0.0
+  }
+]

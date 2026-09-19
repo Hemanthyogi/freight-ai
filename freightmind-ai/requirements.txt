@@ -1,0 +1,60 @@
+# ============================================================
+# FreightMind AI — Python Dependencies
+# SIH 2026 | Problem Statement 26006
+# ============================================================
+
+# --- Core Data ---
+pandas==2.2.2
+numpy==1.26.4
+scipy==1.13.1
+
+# --- Machine Learning ---
+scikit-learn==1.5.1
+xgboost==2.1.0
+lightgbm==4.4.0
+statsmodels==0.14.2          # SARIMA / seasonal decomposition
+
+# --- Deep Learning (optional LSTM) ---
+torch==2.3.1                 # CPU version; switch to torch+cu118 for GPU
+
+# --- Explainability ---
+shap==0.45.1
+
+# --- Backend API ---
+fastapi==0.111.1
+uvicorn[standard]==0.30.3
+pydantic==2.7.4
+python-dotenv==1.0.1
+aiofiles==23.2.1               # required by FastAPI StaticFiles
+
+# --- Database ---
+sqlalchemy==2.0.31
+aiosqlite==0.20.0            # async SQLite for FastAPI
+
+# --- HTTP Client (for external data APIs) ---
+httpx==0.27.0
+
+# --- Serialization ---
+joblib==1.4.2
+
+# --- Visualization (notebooks / EDA) ---
+matplotlib==3.9.1
+seaborn==0.13.2
+plotly==5.22.0
+
+# --- Jupyter ---
+jupyter==1.0.0
+ipykernel==6.29.5
+
+# --- YAML config ---
+pyyaml==6.0.1
+
+# --- Testing ---
+pytest==8.2.2
+pytest-asyncio==0.23.7
+httpx==0.27.0                # also used for TestClient
+
+# --- Utilities ---
+python-dateutil==2.9.0
+tqdm==4.66.4
+loguru==0.7.2

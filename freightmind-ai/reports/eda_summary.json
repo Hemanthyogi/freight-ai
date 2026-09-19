@@ -1,0 +1,139 @@
+{
+  "overall_freight": {
+    "record_count": 29388,
+    "mean_rate_usd_mt": 13.94,
+    "median_rate_usd_mt": 13.83,
+    "std_rate_usd_mt": 3.51,
+    "min_rate_usd_mt": 6.04,
+    "max_rate_usd_mt": 31.02,
+    "iqr_usd_mt": 4.94
+  },
+  "route_wise": {
+    "AU_COAL_PARADIP": {
+      "mean": 14.67,
+      "std": 3.03,
+      "volatility_annualized": 0.589,
+      "distance_nm": 4800,
+      "vessels": [
+        "Capesize",
+        "Panamax",
+        "Supramax"
+      ]
+    },
+    "AU_COAL_VIZAG": {
+      "mean": 15.99,
+      "std": 2.87,
+      "volatility_annualized": 0.596,
+      "distance_nm": 4700,
+      "vessels": [
+        "Panamax",
+        "Supramax"
+      ]
+    },
+    "AU_ORE_GANGAVARAM": {
+      "mean": 11.56,
+      "std": 2.31,
+      "volatility_annualized": 0.566,
+      "distance_nm": 4500,
+      "vessels": [
+        "Capesize",
+        "Panamax"
+      ]
+    },
+    "ID_COAL_PARADIP": {
+      "mean": 11.44,
+      "std": 2.52,
+      "volatility_annualized": 0.566,
+      "distance_nm": 2800,
+      "vessels": [
+        "Handysize",
+        "Panamax",
+        "Supramax"
+      ]
+    },
+    "ZA_COAL_VIZAG": {
+      "mean": 16.94,
+      "std": 2.86,
+      "volatility_annualized": 0.561,
+      "distance_nm": 4200,
+      "vessels": [
+        "Panamax",
+        "Supramax"
+      ]
+    }
+  },
+  "vessel_class_economies_of_scale": {
+    "Capesize": {
+      "mean_rate": 11.21,
+      "std": 2.1,
+      "min": 6.04,
+      "max": 19.17
+    },
+    "Handysize": {
+      "mean_rate": 13.63,
+      "std": 2.09,
+      "min": 7.8,
+      "max": 20.73
+    },
+    "Panamax": {
+      "mean_rate": 13.56,
+      "std": 3.14,
+      "min": 6.04,
+      "max": 26.38
+    },
+    "Supramax": {
+      "mean_rate": 15.86,
+      "std": 3.71,
+      "min": 6.54,
+      "max": 31.02
+    }
+  },
+  "seasonality": {
+    "monsoon_mean_rate": 13.21,
+    "non_monsoon_mean_rate": 14.32,
+    "monsoon_discount_pct": -7.74
+  },
+  "macro_correlations": {
+    "thermal_coal_usd_mt": -0.083,
+    "iron_ore_usd_mt": -0.062,
+    "bdi_proxy": 0.482,
+    "vlsfo_price_usd_mt": -0.051
+  },
+  "port_congestion": {
+    "dhamra": {
+      "mean_waiting_hours": 21.3,
+      "p90_waiting_hours": 35.5,
+      "max_waiting_hours": 80.6
+    },
+    "gangavaram": {
+      "mean_waiting_hours": 16.3,
+      "p90_waiting_hours": 26.7,
+      "max_waiting_hours": 73.2
+    },
+    "gopalpur": {
+      "mean_waiting_hours": 15.6,
+      "p90_waiting_hours": 24.1,
+      "max_waiting_hours": 48.8
+    },
+    "haldia": {
+      "mean_waiting_hours": 78.1,
+      "p90_waiting_hours": 153.5,
+      "max_waiting_hours": 1124.8
+    },
+    "paradip": {
+      "mean_waiting_hours": 40.4,
+      "p90_waiting_hours": 70.8,
+      "max_waiting_hours": 437.3
+    },
+    "sagar_sandheads": {
+      "mean_waiting_hours": 49.6,
+      "p90_waiting_hours": 88.3,
+      "max_waiting_hours": 490.7
+    },
+    "visakhapatnam": {
+      "mean_waiting_hours": 29.0,
+      "p90_waiting_hours": 47.9,
+      "max_waiting_hours": 149.9
+    }
+  }
+}

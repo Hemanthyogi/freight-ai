@@ -1,0 +1,677 @@
+﻿{
+    "kpis":  {
+                 "forecast_freight_rate":  "$9.9 / MT",
+                 "rate_change_expected":  "0.1% expected increase",
+                 "rate_change_pct":  0.1,
+                 "chartering_window":  "Within 7 - 10 Days",
+                 "chartering_window_status":  "Neutral",
+                 "vessel_availability_count":  12,
+                 "vessel_availability_label":  "12 Suitable",
+                 "high_match_count":  3,
+                 "expected_total_cost":  "$2.72M",
+                 "cost_status":  "Optimized",
+                 "risk_level":  "LOW â MEDIUM",
+                 "risk_score":  33
+             },
+    "forecast_rate":  9.9,
+    "forecast_change_pct":  0.07838990738948173,
+    "forecast_chart_historical":  [
+                                      {
+                                          "date":  "2026-06-17",
+                                          "rate":  10.59
+                                      },
+                                      {
+                                          "date":  "2026-06-18",
+                                          "rate":  12.05
+                                      },
+                                      {
+                                          "date":  "2026-06-19",
+                                          "rate":  11.94
+                                      },
+                                      {
+                                          "date":  "2026-06-20",
+                                          "rate":  11.41
+                                      },
+                                      {
+                                          "date":  "2026-06-21",
+                                          "rate":  11.47
+                                      },
+                                      {
+                                          "date":  "2026-06-22",
+                                          "rate":  11.26
+                                      },
+                                      {
+                                          "date":  "2026-06-23",
+                                          "rate":  11.29
+                                      },
+                                      {
+                                          "date":  "2026-06-24",
+                                          "rate":  11.45
+                                      },
+                                      {
+                                          "date":  "2026-06-25",
+                                          "rate":  11.48
+                                      },
+                                      {
+                                          "date":  "2026-06-26",
+                                          "rate":  11.57
+                                      },
+                                      {
+                                          "date":  "2026-06-27",
+                                          "rate":  11.49
+                                      },
+                                      {
+                                          "date":  "2026-06-28",
+                                          "rate":  9.98
+                                      },
+                                      {
+                                          "date":  "2026-06-29",
+                                          "rate":  10.36
+                                      },
+                                      {
+                                          "date":  "2026-06-30",
+                                          "rate":  10.51
+                                      },
+                                      {
+                                          "date":  "2026-07-01",
+                                          "rate":  9.56
+                                      },
+                                      {
+                                          "date":  "2026-07-02",
+                                          "rate":  9.43
+                                      },
+                                      {
+                                          "date":  "2026-07-03",
+                                          "rate":  9.42
+                                      },
+                                      {
+                                          "date":  "2026-07-04",
+                                          "rate":  9.26
+                                      },
+                                      {
+                                          "date":  "2026-07-05",
+                                          "rate":  9.34
+                                      },
+                                      {
+                                          "date":  "2026-07-06",
+                                          "rate":  9.54
+                                      },
+                                      {
+                                          "date":  "2026-07-07",
+                                          "rate":  9.55
+                                      },
+                                      {
+                                          "date":  "2026-07-08",
+                                          "rate":  9.51
+                                      },
+                                      {
+                                          "date":  "2026-07-09",
+                                          "rate":  9.43
+                                      },
+                                      {
+                                          "date":  "2026-07-10",
+                                          "rate":  9.34
+                                      },
+                                      {
+                                          "date":  "2026-07-11",
+                                          "rate":  9.31
+                                      },
+                                      {
+                                          "date":  "2026-07-12",
+                                          "rate":  9.62
+                                      },
+                                      {
+                                          "date":  "2026-07-13",
+                                          "rate":  9.92
+                                      },
+                                      {
+                                          "date":  "2026-07-14",
+                                          "rate":  9.95
+                                      },
+                                      {
+                                          "date":  "2026-07-15",
+                                          "rate":  9.92
+                                      },
+                                      {
+                                          "date":  "2026-07-16",
+                                          "rate":  9.69
+                                      },
+                                      {
+                                          "date":  "2026-07-17",
+                                          "rate":  9.93
+                                      },
+                                      {
+                                          "date":  "2026-07-18",
+                                          "rate":  9.7
+                                      },
+                                      {
+                                          "date":  "2026-07-19",
+                                          "rate":  9.69
+                                      },
+                                      {
+                                          "date":  "2026-07-20",
+                                          "rate":  10.0
+                                      },
+                                      {
+                                          "date":  "2026-07-21",
+                                          "rate":  10.95
+                                      },
+                                      {
+                                          "date":  "2026-07-22",
+                                          "rate":  11.01
+                                      },
+                                      {
+                                          "date":  "2026-07-23",
+                                          "rate":  11.02
+                                      },
+                                      {
+                                          "date":  "2026-07-24",
+                                          "rate":  10.91
+                                      },
+                                      {
+                                          "date":  "2026-07-25",
+                                          "rate":  10.85
+                                      },
+                                      {
+                                          "date":  "2026-07-26",
+                                          "rate":  10.85
+                                      },
+                                      {
+                                          "date":  "2026-07-27",
+                                          "rate":  11.01
+                                      },
+                                      {
+                                          "date":  "2026-07-28",
+                                          "rate":  10.82
+                                      },
+                                      {
+                                          "date":  "2026-07-29",
+                                          "rate":  10.68
+                                      },
+                                      {
+                                          "date":  "2026-07-30",
+                                          "rate":  10.57
+                                      },
+                                      {
+                                          "date":  "2026-07-31",
+                                          "rate":  10.68
+                                      },
+                                      {
+                                          "date":  "2026-08-01",
+                                          "rate":  10.29
+                                      },
+                                      {
+                                          "date":  "2026-08-02",
+                                          "rate":  10.45
+                                      },
+                                      {
+                                          "date":  "2026-08-03",
+                                          "rate":  10.57
+                                      },
+                                      {
+                                          "date":  "2026-08-04",
+                                          "rate":  10.47
+                                      },
+                                      {
+                                          "date":  "2026-08-05",
+                                          "rate":  10.55
+                                      },
+                                      {
+                                          "date":  "2026-08-06",
+                                          "rate":  10.59
+                                      },
+                                      {
+                                          "date":  "2026-08-07",
+                                          "rate":  10.51
+                                      },
+                                      {
+                                          "date":  "2026-08-08",
+                                          "rate":  10.21
+                                      },
+                                      {
+                                          "date":  "2026-08-09",
+                                          "rate":  10.09
+                                      },
+                                      {
+                                          "date":  "2026-08-10",
+                                          "rate":  10.05
+                                      },
+                                      {
+                                          "date":  "2026-08-11",
+                                          "rate":  10.1
+                                      },
+                                      {
+                                          "date":  "2026-08-12",
+                                          "rate":  10.11
+                                      },
+                                      {
+                                          "date":  "2026-08-13",
+                                          "rate":  10.13
+                                      },
+                                      {
+                                          "date":  "2026-08-14",
+                                          "rate":  10.18
+                                      },
+                                      {
+                                          "date":  "2026-08-15",
+                                          "rate":  9.71
+                                      },
+                                      {
+                                          "date":  "2026-08-16",
+                                          "rate":  9.57
+                                      },
+                                      {
+                                          "date":  "2026-08-17",
+                                          "rate":  9.79
+                                      },
+                                      {
+                                          "date":  "2026-08-18",
+                                          "rate":  9.86
+                                      },
+                                      {
+                                          "date":  "2026-08-19",
+                                          "rate":  9.86
+                                      },
+                                      {
+                                          "date":  "2026-08-20",
+                                          "rate":  10.02
+                                      },
+                                      {
+                                          "date":  "2026-08-21",
+                                          "rate":  10.03
+                                      },
+                                      {
+                                          "date":  "2026-08-22",
+                                          "rate":  9.93
+                                      },
+                                      {
+                                          "date":  "2026-08-23",
+                                          "rate":  9.8
+                                      },
+                                      {
+                                          "date":  "2026-08-24",
+                                          "rate":  9.89
+                                      },
+                                      {
+                                          "date":  "2026-08-25",
+                                          "rate":  9.93
+                                      },
+                                      {
+                                          "date":  "2026-08-26",
+                                          "rate":  10.01
+                                      },
+                                      {
+                                          "date":  "2026-08-27",
+                                          "rate":  10.0
+                                      },
+                                      {
+                                          "date":  "2026-08-28",
+                                          "rate":  9.83
+                                      },
+                                      {
+                                          "date":  "2026-08-29",
+                                          "rate":  9.76
+                                      },
+                                      {
+                                          "date":  "2026-08-30",
+                                          "rate":  9.85
+                                      },
+                                      {
+                                          "date":  "2026-08-31",
+                                          "rate":  10.14
+                                      },
+                                      {
+                                          "date":  "2026-09-01",
+                                          "rate":  9.96
+                                      },
+                                      {
+                                          "date":  "2026-09-02",
+                                          "rate":  10.07
+                                      },
+                                      {
+                                          "date":  "2026-09-03",
+                                          "rate":  9.71
+                                      },
+                                      {
+                                          "date":  "2026-09-04",
+                                          "rate":  9.76
+                                      },
+                                      {
+                                          "date":  "2026-09-05",
+                                          "rate":  9.31
+                                      },
+                                      {
+                                          "date":  "2026-09-06",
+                                          "rate":  9.39
+                                      },
+                                      {
+                                          "date":  "2026-09-07",
+                                          "rate":  9.63
+                                      },
+                                      {
+                                          "date":  "2026-09-08",
+                                          "rate":  9.81
+                                      },
+                                      {
+                                          "date":  "2026-09-09",
+                                          "rate":  9.88
+                                      },
+                                      {
+                                          "date":  "2026-09-10",
+                                          "rate":  9.89
+                                      },
+                                      {
+                                          "date":  "2026-09-11",
+                                          "rate":  9.95
+                                      },
+                                      {
+                                          "date":  "2026-09-12",
+                                          "rate":  9.82
+                                      },
+                                      {
+                                          "date":  "2026-09-13",
+                                          "rate":  9.64
+                                      },
+                                      {
+                                          "date":  "2026-09-14",
+                                          "rate":  9.89
+                                      }
+                                  ],
+    "forecast_chart_prediction":  [
+                                      {
+                                          "date":  "2026-09-21",
+                                          "forecast_rate":  9.78,
+                                          "lower_bound":  8.67,
+                                          "upper_bound":  10.89,
+                                          "horizon_days":  7
+                                      },
+                                      {
+                                          "date":  "2026-09-28",
+                                          "forecast_rate":  9.9,
+                                          "lower_bound":  8.51,
+                                          "upper_bound":  11.29,
+                                          "horizon_days":  14
+                                      },
+                                      {
+                                          "date":  "2026-10-14",
+                                          "forecast_rate":  10.56,
+                                          "lower_bound":  8.81,
+                                          "upper_bound":  12.32,
+                                          "horizon_days":  30
+                                      },
+                                      {
+                                          "date":  "2026-11-13",
+                                          "forecast_rate":  11.15,
+                                          "lower_bound":  9.14,
+                                          "upper_bound":  13.15,
+                                          "horizon_days":  60
+                                      },
+                                      {
+                                          "date":  "2026-12-13",
+                                          "forecast_rate":  10.9,
+                                          "lower_bound":  8.73,
+                                          "upper_bound":  13.07,
+                                          "horizon_days":  90
+                                      }
+                                  ],
+    "forecast_insight":  "Freight rates are expected to soften over the next 2 weeks. Recommended chartering window: Within 7 - 10 Days.",
+    "quote_tagline":  "Optimized chartering today for a more resilient and cost-efficient tomorrow.",
+    "voyage_route":  {
+                         "origin":  {
+                                        "name":  "Balikpapan (Indonesia)",
+                                        "lat":  -1.2654,
+                                        "lon":  116.8312
+                                    },
+                         "destination":  {
+                                             "name":  "Paradip Port",
+                                             "lat":  20.3194,
+                                             "lon":  86.6089
+                                         },
+                         "distance_nm":  2450,
+                         "estimated_transit_days":  7.2,
+                         "port_congestion":  "LOW",
+                         "weather_risk":  "LOW",
+                         "waypoints":  [
+                                           {
+                                               "name":  "Balikpapan (Indonesia)",
+                                               "lat":  -1.2654,
+                                               "lon":  116.8312
+                                           },
+                                           {
+                                               "name":  "Malacca Strait Approach",
+                                               "lat":  5.5,
+                                               "lon":  98.0
+                                           },
+                                           {
+                                               "name":  "Bay of Bengal Corridor",
+                                               "lat":  12.0,
+                                               "lon":  88.0
+                                           },
+                                           {
+                                               "name":  "Paradip Port",
+                                               "lat":  20.3194,
+                                               "lon":  86.6089
+                                           }
+                                       ],
+                         "east_coast_ports":  [
+                                                  {
+                                                      "id":  "paradip",
+                                                      "name":  "Paradip",
+                                                      "lat":  20.3194,
+                                                      "lon":  86.6089,
+                                                      "congestion":  "LOW"
+                                                  },
+                                                  {
+                                                      "id":  "visakhapatnam",
+                                                      "name":  "Visakhapatnam",
+                                                      "lat":  17.6868,
+                                                      "lon":  83.2185,
+                                                      "congestion":  "LOW"
+                                                  },
+                                                  {
+                                                      "id":  "chennai",
+                                                      "name":  "Chennai",
+                                                      "lat":  13.0827,
+                                                      "lon":  80.2707,
+                                                      "congestion":  "LOW"
+                                                  }
+                                              ]
+                     },
+    "ai_recommendation":  {
+                              "action":  "CHARTER",
+                              "vessel_name":  "MV Ocean Crest",
+                              "vessel_capacity_dwt":  "58,000 DWT",
+                              "route_display":  "Indonesia -\u003e East Coast India",
+                              "chartering_window":  "Within 7 - 10 Days",
+                              "expected_freight_usd_mt":  9.9,
+                              "expected_total_cost_formatted":  "$2.72M",
+                              "risk_score":  33,
+                              "risk_level_label":  "LOW â MEDIUM",
+                              "button_text":  "VIEW OPTIMAL PLAN"
+                          },
+    "cargo_requirement":  {
+                              "commodity":  "Iron Ore",
+                              "required_quantity_mt":  "250,000 MT",
+                              "origin":  "Indonesia",
+                              "destination":  "East Coast India",
+                              "destination_port":  "Paradip Port",
+                              "delivery_window":  "September - October 2026",
+                              "procurement_strategy":  "Multiple Voyage Charter"
+                          },
+    "top_vessel_matches":  [
+                               {
+                                   "vessel_id":  "V0006",
+                                   "vessel_name":  "MV Ocean Crest",
+                                   "vessel_type":  "Supramax",
+                                   "dwt_mt":  58000,
+                                   "eta":  "18 Sep",
+                                   "match_score":  95,
+                                   "freight_rate_usd_mt":  9.9,
+                                   "total_cost_usd":  816127.0,
+                                   "cost_per_mt":  14.81,
+                                   "risk_level":  "LOW",
+                                   "feasible":  true,
+                                   "reasons":  [
+                                                   "Complies with all port draft, LOA, and beam limitations",
+                                                   "Suitable for parcel loading / multiple-voyage schedule (58,000 DWT)",
+                                                   "Favorable estimated unit cost of $14.81/MT"
+                                               ],
+                                   "disqualifications":  [
+
+                                                         ]
+                               },
+                               {
+                                   "vessel_id":  "V0007",
+                                   "vessel_name":  "MV Eastern Star",
+                                   "vessel_type":  "Supramax",
+                                   "dwt_mt":  62000,
+                                   "eta":  "21 Sep",
+                                   "match_score":  95,
+                                   "freight_rate_usd_mt":  9.9,
+                                   "total_cost_usd":  853747.0,
+                                   "cost_per_mt":  14.49,
+                                   "risk_level":  "LOW",
+                                   "feasible":  true,
+                                   "reasons":  [
+                                                   "Complies with all port draft, LOA, and beam limitations",
+                                                   "Suitable for parcel loading / multiple-voyage schedule (62,000 DWT)",
+                                                   "Favorable estimated unit cost of $14.49/MT"
+                                               ],
+                                   "disqualifications":  [
+
+                                                         ]
+                               },
+                               {
+                                   "vessel_id":  "V0011",
+                                   "vessel_name":  "MV Horizon Pioneer",
+                                   "vessel_type":  "Panamax",
+                                   "dwt_mt":  75000,
+                                   "eta":  "20 Sep",
+                                   "match_score":  95,
+                                   "freight_rate_usd_mt":  9.5,
+                                   "total_cost_usd":  994388.0,
+                                   "cost_per_mt":  13.96,
+                                   "risk_level":  "LOW",
+                                   "feasible":  true,
+                                   "reasons":  [
+                                                   "Complies with all port draft, LOA, and beam limitations",
+                                                   "Suitable for parcel loading / multiple-voyage schedule (75,000 DWT)",
+                                                   "Favorable estimated unit cost of $13.96/MT"
+                                               ],
+                                   "disqualifications":  [
+
+                                                         ]
+                               }
+                           ],
+    "scenario_comparison":  [
+                                {
+                                    "scenario_id":  "Scenario A",
+                                    "name":  "Spot Charter",
+                                    "badge":  "",
+                                    "expected_cost_usd":  2948750.0,
+                                    "expected_freight_usd_mt":  10.4,
+                                    "risk_level":  "Medium",
+                                    "price_volatility_exposure":  "High â exposed to day-to-day spot fixture spikes",
+                                    "operational_flexibility":  "Maximum â commitment only for single voyage lot",
+                                    "tonnage_security":  "Low â subject to prompt vessel availability in loading window",
+                                    "pros":  [
+                                                 "Zero forward volume commitment",
+                                                 "High scheduling flexibility if plant inventory overflows"
+                                             ],
+                                    "cons":  [
+                                                 "Pays spot market liquidity premium (~5%)",
+                                                 "Exposed to sudden freight spikes and port congestion delays"
+                                             ]
+                                },
+                                {
+                                    "scenario_id":  "Scenario B",
+                                    "name":  "Recommended (Multiple Voyage)",
+                                    "badge":  "AI OPTIMAL",
+                                    "expected_cost_usd":  2720750.0,
+                                    "expected_freight_usd_mt":  9.6,
+                                    "risk_level":  "Low",
+                                    "price_volatility_exposure":  "Low â locks agreed rate index collar across shipment tranche",
+                                    "operational_flexibility":  "Moderate â agreed laycan windows per consecutive voyage",
+                                    "tonnage_security":  "High â dedicated vessel or guaranteed performing tonnage",
+                                    "pros":  [
+                                                 "Optimal cost efficiency (~$300k+ savings vs spot)",
+                                                 "Guarantees vessel availability across 3-month procurement horizon",
+                                                 "Protects downstream steel/power plant from supply interruption"
+                                             ],
+                                    "cons":  [
+                                                 "Requires committed cargo readiness and demurrage discipline"
+                                             ]
+                                },
+                                {
+                                    "scenario_id":  "Scenario C",
+                                    "name":  "Delayed Charter",
+                                    "badge":  "",
+                                    "expected_cost_usd":  3146380.0,
+                                    "expected_freight_usd_mt":  10.91,
+                                    "risk_level":  "High",
+                                    "price_volatility_exposure":  "Very High â risk of entering market during unforeseen supply crunch",
+                                    "operational_flexibility":  "Low â restricted options if cargo readiness requires immediate shipment",
+                                    "tonnage_security":  "Very Low â last-minute fixtures incur steep demurrage and premium hire",
+                                    "pros":  [
+                                                 "Cash conservation in immediate 2-week window"
+                                             ],
+                                    "cons":  [
+                                                 "Significant risk of stockout or emergency spot procurement",
+                                                 "Highest expected total landed voyage cost"
+                                             ]
+                                }
+                            ],
+    "why_recommendation":  [
+                               "Favorable freight-rate forecast: AI predicts rates softening by 0.1% over the coming weeks.",
+                               "Vessel capacity matches cargo requirement: MV Ocean Crest (58,000 DWT) fits 250,000 MT across multiple sequenced voyages.",
+                               "Lower port congestion and voyage risk: East Coast ports are operating efficiently with manageable weather risk along the Bay of Bengal corridor."
+                           ],
+    "port_feasibility":  {
+                             "vessel_type":  "Supramax",
+                             "port_id":  "paradip",
+                             "port_name":  "Paradip Port",
+                             "feasible":  false,
+                             "cargo_feasible":  false,
+                             "checks":  [
+                                            {
+                                                "name":  "Draft",
+                                                "vessel_value":  12.5,
+                                                "port_limit":  17.0,
+                                                "passed":  true,
+                                                "status":  "â\u0085 PASS",
+                                                "message":  "Vessel draft 12.5m â¤ port max 17.0m"
+                                            },
+                                            {
+                                                "name":  "LOA",
+                                                "vessel_value":  200.0,
+                                                "port_limit":  300.0,
+                                                "passed":  true,
+                                                "status":  "â\u0085 PASS",
+                                                "message":  "Vessel LOA 200.0m â¤ port max 300.0m"
+                                            },
+                                            {
+                                                "name":  "Beam",
+                                                "vessel_value":  32.0,
+                                                "port_limit":  45.0,
+                                                "passed":  true,
+                                                "status":  "â\u0085 PASS",
+                                                "message":  "Vessel beam 32.0m â¤ port max 45.0m"
+                                            },
+                                            {
+                                                "name":  "Cargo Capacity",
+                                                "vessel_value":  55100.0,
+                                                "port_limit":  250000.0,
+                                                "passed":  false,
+                                                "status":  "â FAIL",
+                                                "message":  "Required 250,000 MT \u003e vessel capacity 55,100 MT"
+                                            }
+                                        ],
+                             "warnings":  [
+                                              "Port max LOA is estimated",
+                                              "Port max beam is estimated"
+                                          ],
+                             "summary":  "â NOT FEASIBLE | Supramax @ Paradip Port | Failed: [\u0027Cargo Capacity\u0027]"
+                         },
+    "model_version":  "FreightMind-XGBoost-v1.0 (2026-09-14)",
+    "data_mode":  "DEMO_DATA"
+}
