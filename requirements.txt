@@ -1,28 +1,15 @@
 # ============================================================
-# FreightMind AI — Python Dependencies (Vercel & Production)
+# FreightMind AI — Python Dependencies (Vercel Serverless)
+# ============================================================
+# IMPORTANT: Keep this minimal — Vercel has a 500 MB function limit.
+# Heavy ML packages (pandas, scikit-learn, xgboost, lightgbm, scipy,
+# statsmodels, shap) must NOT be listed here.
+# The Vercel API (api/index.py) serves pre-computed demo responses only.
 # ============================================================
 
-# --- Core Data & Math ---
-pandas>=2.0.0
-numpy>=1.24.0
-
-# --- Machine Learning ---
-scikit-learn>=1.3.0
-
-# --- Backend API ---
 fastapi>=0.110.0
 uvicorn[standard]>=0.28.0
 pydantic>=2.0.0
 python-dotenv>=1.0.0
-aiofiles>=23.0.0
-
-# --- Database ---
-sqlalchemy>=2.0.0
-aiosqlite>=0.20.0
-
-# --- Serialization & Utils ---
-joblib>=1.3.0
 pyyaml>=6.0.0
-python-dateutil>=2.8.0
-tqdm>=4.66.0
 loguru>=0.7.0
