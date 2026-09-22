@@ -17,12 +17,14 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse, FileResponse
 
 from backend.routes.forecast import router as forecast_router
+from backend.routes.live import router as live_router
 from backend.routes.market import router as market_router
 from backend.routes.port import router as port_router
 from backend.routes.recommend import router as recommend_router
 from backend.routes.risk import router as risk_router
 from backend.routes.vessel import router as vessel_router
 from backend.routes.voyage import router as voyage_router
+from backend.scheduler import start_scheduler, stop_scheduler
 from src.utils.config import get_app_config, is_demo_mode
 from src.utils.logger import logger
 
@@ -33,8 +35,13 @@ async def lifespan(app: FastAPI) -> AsyncGenerator[None, None]:
     logger.info(f"=== Starting FreightMind AI Backend [{mode}] ===")
     logger.info("  FastAPI backend active on port 8000")
     logger.info("  OpenAPI Documentation: http://localhost:8000/docs")
+    # Start 24/7 live data scheduler
+    start_scheduler()
     yield
+    # Graceful shutdown
+    stop_scheduler()
     logger.info("=== Stopping FreightMind AI Backend ===")
+
 
 
 app = FastAPI(
@@ -73,6 +80,7 @@ app.include_router(port_router, prefix=API_V1_PREFIX)
 app.include_router(risk_router, prefix=API_V1_PREFIX)
 app.include_router(market_router, prefix=API_V1_PREFIX)
 app.include_router(recommend_router, prefix=API_V1_PREFIX)
+app.include_router(live_router, prefix=API_V1_PREFIX)
 
 
 from fastapi.staticfiles import StaticFiles

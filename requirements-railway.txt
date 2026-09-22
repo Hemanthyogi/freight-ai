@@ -37,6 +37,9 @@ python-dateutil>=2.8.0
 tqdm>=4.66.0
 loguru>=0.7.0
 
+# --- Background Scheduling ---
+apscheduler>=3.10.0
+
 # --- Visualization (EDA / Reports only) ---
 matplotlib>=3.7.0
 seaborn>=0.12.0

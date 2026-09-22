@@ -7,12 +7,14 @@ import {
   Box,
   Compass,
   GitCompare,
-  FileText
+  FileText,
+  Radio
 } from 'lucide-react';
 
 export default function Sidebar({ activeTab, setActiveTab }) {
   const navItems = [
     { id: 'dashboard', label: 'Dashboard', icon: LayoutDashboard },
+    { id: 'live', label: 'Live Operations', icon: Radio, isLive: true },
     { id: 'forecast', label: 'Freight Forecast', icon: TrendingUp },
     { id: 'vessel', label: 'Vessel Matching', icon: Ship },
     { id: 'port', label: 'Port Feasibility', icon: Anchor },
@@ -54,7 +56,13 @@ export default function Sidebar({ activeTab, setActiveTab }) {
                 }`}
               >
                 <Icon className="w-4 h-4 shrink-0" />
-                <span>{item.label}</span>
+                <span className="flex-1 text-left">{item.label}</span>
+                {item.isLive && (
+                  <span className="flex h-2 w-2 relative">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                  </span>
+                )}
               </button>
             );
           })}

@@ -17,14 +17,19 @@ import CargoProcurementView from './views/CargoProcurementView';
 import OptimizationView from './views/OptimizationView';
 import ScenarioAnalysisView from './views/ScenarioAnalysisView';
 import ReportsView from './views/ReportsView';
+import LiveOperationsView from './views/LiveOperationsView';
+import LiveStatusBar from './components/LiveStatusBar';
+import WeatherAlertBanner from './components/WeatherAlertBanner';
 import defaultDashboardData from './data/defaultDashboardData.json';
-import { Play, Sparkles, RefreshCw, X, ShieldCheck, CheckCircle2, ChevronRight, Home } from 'lucide-react';
+import { Play, Sparkles, RefreshCw, X, ShieldCheck, CheckCircle2, ChevronRight, Home, Radio } from 'lucide-react';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState('dashboard');
   const [loading, setLoading] = useState(false);
   const [dashboardData, setDashboardData] = useState(defaultDashboardData);
   const [showPlanModal, setShowPlanModal] = useState(false);
+  const [liveData, setLiveData] = useState(null);
+  const [liveLoading, setLiveLoading] = useState(false);
 
   // Form State for Interactive Evaluation
   const [origin, setOrigin] = useState('Indonesia');
@@ -33,6 +38,22 @@ export default function App() {
   const [quantity, setQuantity] = useState(250000);
   const [vesselPref, setVesselPref] = useState('Supramax');
   const [strategy, setStrategy] = useState('Multiple Voyage Charter');
+
+  // Load live maritime operations state
+  const fetchLiveState = async () => {
+    setLiveLoading(true);
+    try {
+      const res = await fetch('/api/v1/live/state');
+      if (res.ok) {
+        const data = await res.json();
+        setLiveData(data);
+      }
+    } catch (err) {
+      console.warn('Live state polling fallback:', err);
+    } finally {
+      setLiveLoading(false);
+    }
+  };
 
   // Load default SIH Scenario
   const fetchDefaultScenario = async () => {
@@ -84,9 +105,17 @@ export default function App() {
     }
   };
 
-  // Load on mount
+  // Load on mount & start 60s live poller
   useEffect(() => {
     fetchDefaultScenario();
+    fetchLiveState();
+
+    // 60-second periodic poll for live stream updates
+    const liveTimer = setInterval(() => {
+      fetchLiveState();
+    }, 60000);
+
+    return () => clearInterval(liveTimer);
   }, []);
 
   // Quick Preset Scenarios for SIH Judges
@@ -136,6 +165,9 @@ export default function App() {
         {/* Global Header */}
         <Header />
 
+        {/* 24/7 Live Operations Status Bar */}
+        <LiveStatusBar liveData={liveData} onRefresh={fetchLiveState} loading={liveLoading} />
+
         {/* Dashboard Canvas */}
         <main className="p-5 space-y-4 max-w-7xl mx-auto w-full">
           {/* Breadcrumb Navigation when on sub-views */}
@@ -151,6 +183,7 @@ export default function App() {
                 </button>
                 <ChevronRight className="w-3.5 h-3.5 text-slate-400" />
                 <span className="font-black text-slate-800 uppercase tracking-wide">
+                  {activeTab === 'live' && '24/7 Live Maritime Operations & Climate Risk'}
                   {activeTab === 'forecast' && 'Freight Rate Forecasting'}
                   {activeTab === 'vessel' && 'Vessel Matching & Fleet Selection'}
                   {activeTab === 'port' && 'Port Feasibility & Hard Constraints'}
@@ -173,6 +206,15 @@ export default function App() {
           {/* TAB 1: MASTER DASHBOARD OVERVIEW */}
           {activeTab === 'dashboard' && (
             <>
+              {/* Live Weather Alerts Banner if active */}
+              {liveData?.weather_alerts?.length > 0 && (
+                <WeatherAlertBanner
+                  alerts={liveData.weather_alerts}
+                  onLockCharter={() => setActiveTab('live')}
+                  onViewOperations={() => setActiveTab('live')}
+                />
+              )}
+
               {/* Quick Scenario Preset Controls */}
               <div className="bg-white rounded-xl p-3 border border-slate-200 shadow-sm flex flex-wrap items-center justify-between gap-3">
                 <div className="flex items-center gap-2">
@@ -250,6 +292,15 @@ export default function App() {
               {/* Bottom Workflow Status Bar */}
               <WorkflowBar />
             </>
+          )}
+
+          {/* TAB: 24/7 LIVE OPERATIONS & CLIMATE RISK */}
+          {activeTab === 'live' && (
+            <LiveOperationsView
+              liveData={liveData}
+              onRefresh={fetchLiveState}
+              loading={liveLoading}
+            />
           )}
 
           {/* TAB 2: FREIGHT FORECAST VIEW */}
