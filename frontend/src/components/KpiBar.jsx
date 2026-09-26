@@ -9,12 +9,39 @@ import {
   Anchor
 } from 'lucide-react';
 
+// Dynamically compute the next recommended chartering window (today+1 to today+7)
+function getDynamicCharteringWindow() {
+  const MONTHS = ['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
+  const today = new Date();
+  const start = new Date(today);
+  start.setDate(today.getDate() + 1);          // start tomorrow
+  const end = new Date(start);
+  end.setDate(start.getDate() + 6);            // 7-day window
+
+  if (start.getMonth() === end.getMonth()) {
+    return `${start.getDate()} - ${end.getDate()} ${MONTHS[start.getMonth()]}`;
+  }
+  // Spans two months e.g. "29 SEP - 5 OCT"
+  return `${start.getDate()} ${MONTHS[start.getMonth()]} - ${end.getDate()} ${MONTHS[end.getMonth()]}`;
+}
+
+// Dynamically compute delivery window label e.g. "October - November 2026"
+function getDynamicDeliveryWindow() {
+  const MONTHS_FULL = ['January','February','March','April','May','June',
+                       'July','August','September','October','November','December'];
+  const today = new Date();
+  const m1 = today.getMonth();
+  const m2 = (m1 + 1) % 12;
+  const year = today.getFullYear();
+  return `${MONTHS_FULL[m1]} - ${MONTHS_FULL[m2]} ${year}`;
+}
+
 export default function KpiBar({ kpis }) {
   const data = kpis || {
     forecast_freight_rate: '$32.8 / MT',
     rate_change_expected: '6.4% expected',
     rate_change_pct: -6.4,
-    chartering_window: '18 - 24 SEP',
+    chartering_window: getDynamicCharteringWindow(),
     chartering_window_status: 'Favorable',
     vessel_availability_label: '12 Suitable',
     high_match_count: 3,
@@ -22,6 +49,12 @@ export default function KpiBar({ kpis }) {
     cost_status: 'Optimized',
     risk_level: 'LOW - MEDIUM',
     risk_score: 28,
+  };
+
+  // Always override chartering_window to be dynamic even when kpis are passed in from API
+  const displayData = {
+    ...data,
+    chartering_window: getDynamicCharteringWindow(),
   };
 
   return (
@@ -52,7 +85,7 @@ export default function KpiBar({ kpis }) {
             CHARTERING WINDOW
           </span>
           <div className="text-xl font-black text-slate-900 mt-1">
-            {data.chartering_window}
+            {displayData.chartering_window}
           </div>
           <div className="flex items-center gap-1 text-[11px] font-bold text-emerald-600 mt-1">
             <CheckCircle2 className="w-3.5 h-3.5" />

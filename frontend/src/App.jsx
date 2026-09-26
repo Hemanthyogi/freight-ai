@@ -23,10 +23,71 @@ import WeatherAlertBanner from './components/WeatherAlertBanner';
 import defaultDashboardData from './data/defaultDashboardData.json';
 import { Play, Sparkles, RefreshCw, X, ShieldCheck, CheckCircle2, ChevronRight, Home, Radio } from 'lucide-react';
 
+// ── Dynamic date utilities ────────────────────────────────────────────────────
+const MONTHS_SHORT = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+const MONTHS_FULL  = ['January','February','March','April','May','June',
+                      'July','August','September','October','November','December'];
+
+function addDays(date, days) {
+  const d = new Date(date);
+  d.setDate(d.getDate() + days);
+  return d;
+}
+
+function fmtShort(date) {
+  return `${date.getDate()} ${MONTHS_SHORT[date.getMonth()]}`;
+}
+
+/** Patch a raw dashboard payload, replacing hardcoded dates with today-relative ones. */
+function patchDashboardDates(raw) {
+  if (!raw) return raw;
+  const today  = new Date();
+  const data   = JSON.parse(JSON.stringify(raw)); // deep clone
+
+  // Chartering window: tomorrow → tomorrow+6
+  const wStart = addDays(today, 1);
+  const wEnd   = addDays(today, 7);
+  const windowStr =
+    wStart.getMonth() === wEnd.getMonth()
+      ? `${wStart.getDate()} - ${wEnd.getDate()} ${MONTHS_SHORT[wStart.getMonth()].toUpperCase()}`
+      : `${fmtShort(wStart).toUpperCase()} - ${fmtShort(wEnd).toUpperCase()}`;
+
+  if (data.kpis) {
+    data.kpis.chartering_window = windowStr;
+  }
+
+  // Delivery window: "Current Month - Next Month Year"
+  const deliveryWindow = `${MONTHS_FULL[today.getMonth()]} - ${MONTHS_FULL[(today.getMonth() + 1) % 12]} ${today.getFullYear()}`;
+  if (data.cargo_requirement) {
+    data.cargo_requirement.delivery_window = deliveryWindow;
+  }
+  if (data.market_timing) {
+    data.market_timing.delivery_window = deliveryWindow;
+  }
+
+  // Vessel ETAs: spread them from today+5, +8, +7
+  const etaOffsets = [5, 8, 7];
+  if (data.top_vessel_matches && Array.isArray(data.top_vessel_matches)) {
+    data.top_vessel_matches = data.top_vessel_matches.map((v, i) => ({
+      ...v,
+      eta: fmtShort(addDays(today, etaOffsets[i] ?? (5 + i * 3))),
+    }));
+  }
+
+  // Forecast insight string — update month reference
+  if (data.forecast_insight) {
+    data.forecast_insight = data.forecast_insight
+      .replace(/\bSeptember\b/g, MONTHS_FULL[today.getMonth()])
+      .replace(/\bOctober\b/g, MONTHS_FULL[(today.getMonth() + 1) % 12]);
+  }
+
+  return data;
+}
+
 export default function App() {
   const [activeTab, setActiveTab] = useState('dashboard');
   const [loading, setLoading] = useState(false);
-  const [dashboardData, setDashboardData] = useState(defaultDashboardData);
+  const [dashboardData, setDashboardData] = useState(() => patchDashboardDates(defaultDashboardData));
   const [showPlanModal, setShowPlanModal] = useState(false);
   const [liveData, setLiveData] = useState(null);
   const [liveLoading, setLiveLoading] = useState(false);
@@ -62,14 +123,14 @@ export default function App() {
       const res = await fetch('/api/v1/voyage-analysis/default');
       if (res.ok) {
         const data = await res.json();
-        setDashboardData(data);
+        setDashboardData(patchDashboardDates(data));
       } else {
         console.warn('Backend not responding yet, using default state.');
-        setDashboardData((prev) => prev || defaultDashboardData);
+        setDashboardData((prev) => prev || patchDashboardDates(defaultDashboardData));
       }
     } catch (err) {
       console.warn('API error, using local fallback state:', err);
-      setDashboardData((prev) => prev || defaultDashboardData);
+      setDashboardData((prev) => prev || patchDashboardDates(defaultDashboardData));
     } finally {
       setLoading(false);
     }
@@ -78,12 +139,14 @@ export default function App() {
   // Run Custom Analysis
   const handleAnalyze = async (customParams = null) => {
     setLoading(true);
+    const today = new Date();
+    const dynamicDelivery = `${MONTHS_FULL[today.getMonth()]} - ${MONTHS_FULL[(today.getMonth()+1)%12]} ${today.getFullYear()}`;
     const payload = customParams || {
       origin,
       destination_port_id: destPort,
       commodity,
       cargo_quantity_mt: Number(quantity),
-      delivery_window: 'September - October 2026',
+      delivery_window: dynamicDelivery,
       procurement_strategy: strategy,
       vessel_preference: vesselPref,
     };
@@ -96,7 +159,7 @@ export default function App() {
       });
       if (res.ok) {
         const data = await res.json();
-        setDashboardData(data);
+        setDashboardData(patchDashboardDates(data));
       }
     } catch (err) {
       console.error('Analysis request error:', err);
